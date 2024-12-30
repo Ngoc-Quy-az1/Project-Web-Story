@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Redirect or 404</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1.2rem;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        const url = new URL(window.location.href);
+        const title = url.searchParams.get('title');
+        const apiUrl = `http://localhost:8090/api/search_titlestory?name=${title}`; 
+        // const apiUrl = '/database/dataSearch.json';
+       fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); // Parse JSON từ response
+    })
+    .then(data => {
+        console.log(data)
+        if(data.story_id){
+            // console.log(data)
+            window.location.href=`./chapter.html?story_id=${data.story_id}`
+        }else{
+            document.body.innerHTML = `
+                <div class="container">
+                    <h1>404</h1>
+                    <p>Oops! The page you are looking for does not exist.</p>
+                    <a href="/index.html">Return to Home</a>
+                </div>
+            `;
+            document.body.style.display = 'flex';
+            document.body.style.justifyContent = 'center';
+            document.body.style.alignItems = 'center';
+            document.body.style.height = '100vh';
+            document.body.style.backgroundColor = '#f4f4f4';
+            document.body.style.color = '#333';
+            document.body.style.margin = '0';
+        }
+    })
+    .catch(error => {
+        // Hiển thị lỗi nếu có
+       
+    });
+        
+            
+        
+
+       
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Loading...</h1>
+        <p>Please wait while we check the data.</p>
+    </div>
+</body>
+</html>

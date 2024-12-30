@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chap Truyen</title>
+  <style>
+    /* Nền tối và cài đặt font chữ */
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* Container cho hình ảnh */
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    /* Ảnh */
+    .image-container img {
+      max-width: 90%;
+      height: auto;
+      object-fit: contain;
+      border: 2px solid #444;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Nút "Back" */
+    .back-button {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #0066cc;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 20px auto;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-button:hover {
+      background-color: #0052a3;
+      transform: scale(1.1);
+    }
+
+    .back-button:active {
+      transform: scale(0.95);
+    }
+
+    /* Nút bật/tắt chế độ nền */
+    .toggle-theme {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #444;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px auto;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .toggle-theme:hover {
+      background-color: #666;
+      transform: scale(1.1);
+    }
+
+    .toggle-theme:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1>Chapter Images</h1> -->
+  <a id="back_to_chapter" class="back-button" href="">Back to Chapters</a>
+  <button id="toggleTheme" class="toggle-theme">Toggle Theme</button>
+  <div class="image-container" id="imageContainer"></div>
+
+  <script>
+    const url = new URL(window.location.href);
+    const chapter_id = url.searchParams.get('chapter_id');
+    const story_id = url.searchParams.get('story_id');
+    const type_story = url.searchParams.get('type_story');
+    const container = document.getElementById('imageContainer');
+
+    // Đường dẫn đến file JSON
+    const jsonUrl = `http://localhost:8090/api/${type_story}?story_id=${story_id}&chapter_id=${chapter_id}`; 
+
+    const back = document.querySelector('#back_to_chapter');
+    back.href = `./chapter.html?story_id=${story_id}`;
+
+    // Lấy dữ liệu từ file JSON
+    fetch(jsonUrl)
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(imageUrl => {
+          console.log(imageUrl);
+          const img = document.createElement('img');
+          img.src = imageUrl;
+          img.alt = 'Chapter Image';
+          container.appendChild(img);
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+
+    // Chuyển đổi chế độ nền
+    const toggleThemeButton = document.getElementById('toggleTheme');
+    toggleThemeButton.addEventListener('click', () => {
+      const isDark = document.body.style.backgroundColor === 'rgb(18, 18, 18)';
+      document.body.style.backgroundColor = isDark ? '#ffffff' : '#121212';
+      document.body.style.color = isDark ? '#000000' : '#ffffff';
+    });
+  </script>
+</body>
+</html>

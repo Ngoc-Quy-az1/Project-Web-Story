@@ -1,0 +1,1977 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Be Vietnam Pro", sans-serif;
+    line-height: 1.4;
+    background-color: #121214;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+/* container */
+.container {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+/* end container */
+
+/* Button */
+.button {
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 28px;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 57px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #fff;
+    /* Darker hover effect */
+}
+
+/* Button Outline */
+.button-outline {
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 28px;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 57px;
+    border: 1.5px solid #cd4008;
+    transition: border-color 0.3s ease;
+}
+
+.button-outline:hover {
+    border-color: #e67e22;
+}
+
+.button-outline i {
+    margin-top: 5px;
+    font-size: 18px;
+    color: var(--color-main);
+    margin-left: 11px;
+}
+
+/* Header */
+.header {
+    margin-bottom: -135px;
+    padding: 28px 0;
+    position: relative;
+    z-index: 999;
+}
+
+.header .container {
+    padding-bottom: 35px;
+}
+
+.header .inner-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header .inner-logo img {
+    width: auto;
+    height: 40px;
+}
+
+.header .inner-menu {
+    flex: 1;
+    text-align: center;
+}
+
+.header .inner-menu ul {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 48px;
+}
+
+.header .inner-menu ul a {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Header Menu */
+.header-menu li {
+    position: relative;
+    padding: 0 10px;
+}
+
+.header-menu li ul {
+    position: absolute;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    border-radius: 8px;
+    top: 0;
+    left: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    width: 150px;
+    display: none;
+}
+
+.header-menu>li>ul {
+    top: 100%;
+    left: 0;
+}
+
+.header-menu li:hover>ul {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Header Form */
+.header .inner-form {
+    background-color: #F3F3F3;
+    height: 44px;
+    width: 380px;
+    border-radius: 46px;
+    padding: 0 16px;
+    display: inline-flex;
+    gap: 12px;
+}
+
+.header .inner-form input {
+    border: 0;
+    outline: 0;
+    height: 100%;
+    background-color: transparent;
+    flex: 1;
+}
+
+.header .inner-form button {
+    font-size: 16.5px;
+    color: #cd4008;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-xl {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.stretched-link {
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.stretched-link:hover {
+    color: #007bff;
+}
+
+.badge-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .col-6 {
+    padding: 10px;
+}
+
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    /* Điều chỉnh tỷ lệ này để quyết định chiều cao của phần gradient */
+    background: linear-gradient(to bottom, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 1) 100%);
+    pointer-events: none;
+    /* Đảm bảo lớp phủ không làm ảnh hưởng đến các sự kiện chuột */
+}
+
+
+.fade-transition {
+    height: 100px;
+    /* Điều chỉnh chiều cao của lớp fade */
+    background: linear-gradient(to top, rgba(18, 18, 20, 0.7) 10%, rgba(18, 18, 20, 0) 100%);
+    margin-top: -50px;
+    /* Điều chỉnh vị trí lớp fade sao cho phù hợp */
+    pointer-events: none;
+    /* Không ảnh hưởng đến các phần tử khác */
+}
+
+
+/* Section 1 */
+.section-1 {
+    overflow: hidden;
+}
+
+.section-1 .inner-wrap {
+    display: flex;
+    position: relative;
+}
+
+.section-1 .inner-content {
+    width: 50%;
+    padding-top: 50px;
+    padding-right: 76px;
+}
+
+.section-1 .inner-title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #000;
+    font-weight: 700;
+}
+
+.section-1 .inner-title .inner-title-main {
+    font-size: 40px;
+    color: #fff;
+}
+
+.section-1 .inner-title .inner-title-sub {
+    font-size: 26px;
+    color: #fff;
+}
+
+.section-1 .inner-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 34px;
+    color: #fff;
+}
+
+.section-1 .inner-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.section-1 .inner-image .inner-image-main {
+    width: 600px;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+/* Section 2 */
+.section-2 {
+    margin-top: 60px;
+    padding: 100px 20px;
+    /* background: url(https://b4qlw8tl.media.zestyio.com/Special-Prize-Best-Characters-Desk.png) center no-repeat; */
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    margin-bottom: 100px !important;
+    /* Remove bottom margin to make it continuous with Section 3 */
+}
+
+/* Lighter overlay for Section 2 */
+/* .section-2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+} */
+
+/* Container for Section 2 to limit content width */
+.section-2 .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    /* Set a max-width to control content width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Title Styling */
+.section-2 .title h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff6122;
+    /* Accent color for the title */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* Light shadow for better readability */
+}
+
+/* Icon section */
+.section-2 .inner-icon {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 2;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Each icon block */
+.section-2 .inner-icon .left,
+.section-2 .inner-icon .center,
+.section-2 .inner-icon .right {
+    width: 30%;
+    background: rgba(255, 255, 255, 0.2);
+    /* Light background behind icons */
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.section-2 .inner-icon .left:hover,
+.section-2 .inner-icon .center:hover,
+.section-2 .inner-icon .right:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.3);
+    /* Slightly lighter background on hover */
+}
+
+.section-2 .inner-icon .left i,
+.section-2 .inner-icon .center i,
+.section-2 .inner-icon .right i {
+    color: #ff6122;
+    /* Accent color for icons */
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.section-2 .inner-icon .desc {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* AOS animations */
+[data-aos="fade-right"] {
+    animation-delay: 0s;
+}
+
+[data-aos="zoom-in"] {
+    animation-delay: 0.3s;
+}
+
+
+/* Section 3 */
+.section-3 {
+    /* margin-top: 100px; Remove margin-top to make it continuous with Section 2 */
+    padding: 100px 20px;
+    /* background: url(https://b4qlw8tl.media.zestyio.com/Special-Prize-Catchiest-Hook-Tab.png) center no-repeat; */
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Lighter overlay for Section 3 */
+/* .section-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+} */
+
+/* Container for Section 3 to limit content width */
+.section-3 .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    /* Set a max-width to control content width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Content Styling */
+.section-3 .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.section-3 .inner-image {
+    width: 45%;
+    margin-left: 0;
+}
+
+.section-3 .inner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    /* Lighter shadow */
+}
+
+/* Content container */
+.section-3 .inner-content {
+    width: 50%;
+    text-align: left;
+    z-index: 2;
+}
+
+.section-3 .inner-content .inner-title {
+    font-weight: 700;
+    color: #ff6122;
+    /* Strong contrast for title */
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.section-3 .inner-content .inner-title-main {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ff6122;
+}
+
+.section-3 .inner-content .inner-title-sub {
+    font-size: 26px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.section-3 .inner-content .inner-desc {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.section-3 .inner-content .inner-logo {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.section-3 .inner-content .inner-logo .logo {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.section-3 .inner-content .inner-logo .logo img {
+    width: 60px;
+    transition: transform 0.3s ease;
+}
+
+.section-3 .inner-content .inner-logo .logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Add more spacing for mobile responsiveness */
+@media (max-width: 768px) {
+    .section-3 .inner-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-3 .inner-image {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .section-3 .inner-content {
+        width: 80%;
+        text-align: center;
+    }
+
+    .section-3 .inner-title {
+        font-size: 28px;
+    }
+
+    .section-3 .inner-title-main {
+        font-size: 40px;
+    }
+
+    .section-3 .inner-desc {
+        font-size: 16px;
+    }
+}
+
+/* AOS animations */
+[data-aos="fade-left"] {
+    animation-delay: 0s;
+}
+
+[data-aos="fade-right"] {
+    animation-delay: 0.3s;
+}
+
+[data-aos="fade-up"] {
+    animation-delay: 0.5s;
+}
+
+/* End Section-3 */
+
+
+/* Section Palet: Web Video Content */
+.section-palet {
+    background: rgb(203, 202, 218);
+    background: linear-gradient(90deg, rgba(203, 202, 218, 1) 0%, rgba(29, 134, 206, 1) 92%, rgba(81, 196, 219, 1) 100%);
+    /* background-color: #322864; */
+    /* background: url(https://b4qlw8tl.media.zestyio.com/Special-Prize-Best-Characters-Desk.png) center no-repeat; */
+    background-size: cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.section-palet .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content-wrap {
+    max-width: 800px;
+    margin-top: 30px;
+    z-index: 2;
+}
+
+.section-title {
+    margin-top: -30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #cd4008;
+    margin-bottom: 20px;
+}
+
+.section-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.button {
+    background-color: #ff6122;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #e14e1e;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Optional: Dark overlay for text visibility */
+/* .section-palet:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1; 
+} */
+
+
+/* Section 4 Styles */
+.section-4 .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.section-4 .title {
+    text-align: center;
+    font-size: 28px;
+    /* Slightly larger font size for more emphasis */
+    color: #cd4008;
+    font-weight: 700;
+    margin-bottom: 25px;
+    /* Increased space to separate from the description */
+}
+
+.section-4 .desc {
+    text-align: center;
+    font-size: 18px;
+    /* A bit larger for readability */
+    color: #ff6122;
+    margin-bottom: 40px;
+    /* Increased margin for breathing space */
+}
+
+.section-4 .inner-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    /* Increased gap for better spacing */
+    flex-wrap: wrap;
+    /* Ensures responsiveness on smaller screens */
+}
+
+.section-4 .inner-content .write {
+    flex: 1;
+    /* Ensures equal width for each "write" item */
+    max-width: 350px;
+    /* Keeps the content in a good size */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Ensures elements inside "write" have good spacing */
+}
+
+.section-4 .inner-content .write .inner-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    /* Increased gap for better clarity */
+}
+
+.section-4 .inner-content .write .inner-top .number {
+    font-size: 88px;
+    /* Slightly larger number for more impact */
+    color: #cd4008;
+    font-weight: 900;
+}
+
+.section-4 .inner-content .write .inner-top .content .title {
+    margin-bottom: 12px;
+    /* Increased margin to give room for title */
+    font-size: 28px;
+}
+
+.section-4 .inner-content .write .inner-top .content .desc {
+    font-size: 18px;
+    /* Increased font size for better readability */
+    color: #333;
+    /* Darker color for description for better contrast */
+}
+
+.section-4 .inner-content .write .inner-bottom {
+    text-align: center;
+    background-image: url('../images/section-4/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+    /* Padding for content inside */
+    border-radius: 8px;
+    /* Added rounded corners for aesthetics */
+}
+
+.section-4 .inner-content .write .inner-bottom .number {
+    font-size: 48px;
+    /* Increased size for better visibility */
+    font-weight: 700;
+    color: white;
+}
+
+.section-4 .inner-content .write .inner-bottom .content {
+    font-size: 18px;
+    /* Increased font size for readability */
+    font-weight: 500;
+    color: white;
+    margin-top: 10px;
+}
+
+.section-4 .foot {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    /* Slightly larger text for better visibility */
+    color: #ff61227c;
+    font-style: italic;
+    /* Added italic style for differentiation */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .section-4 .inner-content {
+        flex-direction: column;
+        gap: 30px;
+        /* Reduced gap on smaller screens */
+    }
+
+    .section-4 .title {
+        font-size: 24px;
+    }
+
+    .section-4 .desc {
+        font-size: 16px;
+    }
+
+    .section-4 .inner-content .write {
+        max-width: 100%;
+    }
+}
+
+/* Section 5 Styles */
+.section-5 .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-5 .item {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    /* Reduced gap for a more balanced layout */
+    align-items: center;
+    /* Vertically centers content */
+    flex-wrap: wrap;
+    /* Allows wrapping for responsiveness */
+}
+
+.section-5 .inner-image {
+    flex: 1;
+    max-width: 480px;
+    /* Ensures the image doesn't stretch too wide */
+}
+
+.section-5 .inner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.section-5 .inner-content {
+    flex: 1;
+    padding-right: 50px;
+    max-width: 600px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.section-5 .inner-content .content {
+    font-size: 24px;
+    /* Larger text for the content */
+    font-weight: 600;
+    margin-bottom: 15px;
+    /* Adds space between content and author */
+}
+
+.section-5 .inner-content .author {
+    font-size: 18px;
+    font-weight: 700;
+    color: #cd4008;
+    margin-bottom: 15px;
+}
+
+.section-5 .inner-content .desc {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-5 .inner-content .button {
+    background-color: #ff6122;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.section-5 .inner-content .button:hover {
+    background-color: #cd4008;
+}
+
+/* Swiper Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #cd4008;
+}
+
+.swiper-pagination {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet {
+    background-color: #ff6122;
+}
+
+/* Section-6 - Top 3 Truyện Hot */
+.section-6 {
+    padding: 50px 0;
+    /* background-color: #f5f5f5; */
+    background: rgb(203, 202, 218);
+    background: linear-gradient(90deg, rgba(203, 202, 218, 1) 0%, rgba(29, 134, 206, 1) 92%, rgba(81, 196, 219, 1) 100%);
+}
+
+.section-6 .title h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-6 .inner-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.section-6 .story-item {
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 30%;
+    text-align: center;
+}
+
+.section-6 .story-item:hover {
+    transform: translateY(-10px);
+}
+
+.section-6 .story-item .story-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+.section-6 .story-description {
+    padding: 20px;
+}
+
+.section-6 .story-description h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.section-6 .story-description p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Section-7 - Thể Loại Truyện */
+.section-7 {
+    padding: 50px 0;
+    /* background-color: #ffffff; */
+    background: rgb(203, 202, 218);
+    background: linear-gradient(90deg, rgba(203, 202, 218, 1) 0%, rgba(29, 134, 206, 1) 92%, rgba(81, 196, 219, 1) 100%);
+}
+
+.section-7 .title h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-7 .category-icons {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.section-7 .category-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.section-7 .category-item:hover {
+    transform: translateY(-10px);
+}
+
+.section-7 .category-item i {
+    font-size: 50px;
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.section-7 .category-item h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.contain2 {
+    /* background: url(https://www.wattpad.com/wp-web-assets/build/_assets/wattpad-wall-J6RV43P6.png) center no-repeat; */
+    background-size: cover;
+    background-color: var(--ds-neutral-00);
+}
+
+/* Section 8: Planet Story */
+.section-planet {
+    /* margin-top: -80px; */
+    padding: 62px 20px 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #fff;
+    /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); */
+}
+
+/* .section-planet .container {
+    max-width: 1180px;
+    margin: 0 auto;
+} */
+
+.planet-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #cd4008;
+    text-transform: uppercase;
+}
+
+.planet-desc,
+.planet-desc-bottom {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.planet-image {
+    width: 180%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: block;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    /* border: 5px solid rgba(255, 68, 0, 0.8); */
+}
+
+.planet-desc-bottom {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.section-planet:hover {
+    background-color: rgba(204, 241, 249, 0.214);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* footer */
+.footer {
+    background: linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%);
+    border-radius: 40px 40px 0 0;
+    padding: 80px 0 40px 0;
+}
+
+.footer .inner-top {
+    background-color: #cd4008;
+    padding: 32px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .inner-top .inner-content {
+    width: calc(40% - 20px);
+    font-size: 20px;
+    font-weight: 700;
+    color: #FDFDFD;
+    text-transform: capitalize;
+}
+
+.footer .inner-top .inner-form {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.footer .inner-top .inner-form input {
+    flex: 1;
+    height: 48px;
+    border: 1px solid #99A2A5;
+    border-radius: 8px;
+    padding: 0 28px;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+}
+
+.footer .inner-top .inner-form input::placeholder {
+    color: #99A2A5;
+}
+
+.footer .inner-top .inner-form button {
+    height: 48px;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 0 28px;
+    color: #FDFDFD;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    transition: all 0.3s;
+}
+
+.footer .inner-top .inner-form button:hover {
+    background-color: #00A7E7;
+}
+
+.footer .inner-middle {
+    padding: 40px 0;
+    border-bottom: 1px solid #CCD1D2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .inner-middle .inner-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px 60px;
+}
+
+.footer .inner-middle .inner-links ul li a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #cd4008;
+}
+
+.footer .inner-middle .inner-links ul li a:hover {
+    color: #00A7E7;
+}
+
+.footer .inner-middle .inner-socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px 40px;
+}
+
+.footer .inner-middle .inner-socials ul li a {
+    font-size: 24px;
+    color: #cd4008;
+}
+
+.footer .inner-middle .inner-socials ul li a:hover {
+    color: #00A7E7;
+}
+
+.footer .inner-bottom {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .inner-bottom .inner-copyright {
+    font-weight: 500;
+    font-size: 14px;
+    color: #ff6122;
+    width: 40%;
+}
+
+.footer .inner-bottom .inner-logo {
+    width: 20%;
+    text-align: center;
+}
+
+.footer .inner-bottom .inner-logo img {
+    width: 115px;
+    height: auto;
+}
+
+.footer .inner-bottom .inner-links {
+    width: 40%;
+}
+
+.footer .inner-bottom .inner-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+.footer .inner-bottom .inner-links ul li a {
+    font-weight: 500;
+    font-size: 14px;
+    color: #cd4008;
+}
+
+/* end footer */
+
+/* End index  */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stories */
+
+/* Section 1 */
+.stories .section-1 {
+    margin-top: 120px;
+    position: relative;
+    border-top: 1px solid #cd4008;
+    border-bottom: 1px solid #cd4008;
+    background-color: #cd40083c;
+    margin-bottom: 35px;
+}
+
+.stories .section-1 .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.stories .section-1 .inner-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;  /* Giảm khoảng cách giữa các ô */
+    flex: 1;
+    text-align: center;
+}
+
+.stories .section-1 .inner-wrap ul {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px;  /* Điều chỉnh khoảng cách giữa các ô (giảm lại) */
+}
+
+.stories .section-1 .inner-wrap ul a {
+    font-weight: 700;
+    font-size: 16px;
+    color: #cd4008;
+    padding: 8px 16px;  /* Điều chỉnh lại padding để làm cho các ô nhỏ lại */
+    display: inline-block;
+    border: 2px solid transparent; /* Viền mặc định trong suốt */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Thêm hiệu ứng khi hover hoặc focus vào ô */
+.stories .section-1 .inner-wrap ul a:hover,
+.stories .section-1 .inner-wrap ul a:focus {
+    color: #ff6122;
+    border-color: #ff6122;  /* Viền màu khi hover hoặc focus */
+    outline: none;  /* Loại bỏ outline mặc định khi focus */
+}
+
+/* Thêm hiệu ứng khi ô có khung viền màu khi được chọn */
+.stories .section-1 .inner-wrap ul a.selected {
+    border-color: #ff6122;  /* Viền màu khi chọn ô */
+    color: #ff6122;  /* Màu chữ khi chọn ô */
+}
+
+.stories .section-1 .inner-wrap ul a {
+    font-weight: 700;
+    font-size: 16px;
+    color: #cd4008;
+    padding: 8px 16px;
+    display: inline-block;
+    border: 2px solid transparent; /* Viền mặc định trong suốt */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Thêm hiệu ứng khi hover hoặc focus vào ô */
+.stories .section-1 .inner-wrap ul a:hover,
+.stories .section-1 .inner-wrap ul a:focus {
+    color: #ff6122;
+    border-color: #ff6122;
+    outline: none;
+}
+
+/* Khi ô được chọn */
+.stories .section-1 .inner-wrap ul a.selected {
+    border-color: #ff6122;
+    color: #ff6122;
+    background-color: rgba(255, 97, 34, 0.1); /* Tô nền khi chọn */
+}
+
+
+/* End Section 1 */
+
+/* product-item */
+.product-item {
+    background-color: #FDFDFD;
+    box-shadow: 0px 4px 28px -2px #00000014;
+    padding: 8px 8px 0 8px;
+    border-radius: 12px;
+}
+
+.product-item .inner-image {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.product-item .inner-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+}
+
+.product-item .inner-content {
+    padding: 8px 8px 20px 8px;
+}
+
+.product-item .inner-content .inner-title {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ff6122;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.product-item .inner-content .inner-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 26px;
+    margin-bottom: 4px;
+}
+
+.product-item .inner-content .inner-info-item {
+    color: #cd4008;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+}
+
+.product-item .inner-content .inner-info-item b {
+    font-weight: 700;
+}
+
+.product-item .inner-content .inner-info-item::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    background-color: #ff6122;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: -13px;
+}
+
+.product-item .inner-content .inner-info-item:last-child::after {
+    display: none;
+}
+
+.product-item .inner-content .inner-price {
+    font-weight: 700;
+    font-size: 14px;
+    color: #cd4008;
+}
+
+/* End product-item */
+
+/* product-item */
+.product-item {
+    background-color: #FDFDFD;
+    box-shadow: 0px 4px 28px -2px #00000014;
+    padding: 8px 8px 0 8px;
+    border-radius: 12px;
+}
+
+.product-item .inner-image {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.product-item .inner-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+}
+
+.product-item .inner-content {
+    padding: 8px 8px 20px 8px;
+}
+
+.product-item .inner-content .inner-title {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #cd4008;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.product-item .inner-content .inner-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 26px;
+    margin-bottom: 4px;
+}
+
+.product-item .inner-content .inner-info-item {
+    color: #cd4008;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+}
+
+.product-item .inner-content .inner-info-item b {
+    font-weight: 700;
+}
+
+.product-item .inner-content .inner-info-item::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    background-color: #cd4008;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: -13px;
+}
+
+.product-item .inner-content .inner-info-item:last-child::after {
+    display: none;
+}
+
+.product-item .inner-content .inner-price {
+    font-weight: 700;
+    font-size: 14px;
+    color: #ff6122;
+}
+
+/* End product-item */
+
+/* Section 2 */
+.stories .section-2 {
+    padding: 60px 0;
+    margin-top: -30px;
+}
+
+.stories .section-2 .inner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.stories.section-2 .inner-wrap .product-item {
+    width: calc((100% - 60px) / 4);
+}
+
+.stories .section-2 .inner-button-bottom {
+    display: none;
+}
+
+.stories .inner-buttons {
+    justify-content: end;
+    display: flex;
+    gap: 20px;
+}
+
+/* End Section 2 */
+
+/* box-head */
+.box-head {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.box-head .inner-sub-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 2px;
+}
+
+.box-head .inner-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #ff6122;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+/* End box-head */
+
+/* section-3 */
+.stories .section-3 .inner-wrap {
+    background-image: url(../image/section3/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: -70px;
+    padding-bottom: 30px;
+    background-color: #cd40084d;
+}
+
+.stories .section-3 .inner-image {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-left: 20px;
+    margin-top: 36px;
+}
+
+.stories .section-3 .inner-image img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.stories .section-3 .inner-content {
+    width: 60%;
+    text-align: right;
+    margin-top: 17px;
+    margin-right: 85px;
+}
+
+.stories .section-3 .inner-content .inner-title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-main);
+}
+
+.stories .section-3 .inner-content .inner-title-main {
+    font-size: 40px;
+}
+
+.stories .section-3 .inner-content .inner-title-sub {
+    margin-top: 8px;
+    font-size: 26px;
+}
+
+.stories .section-3 .inner-content .inner-desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: #242B33;
+    margin-bottom: 24px;
+}
+
+.stories .section-3 .inner-content .inner-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 18px;
+}
+
+/* End section-3 */
+
+/* section-4 */
+.stories .section-4 {
+    /* padding: 60px 0; */
+    padding-bottom: 50px;
+}
+
+.stories .section-4 .inner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stories .section-4 .inner-wrap .blog-item {
+    width: calc((100% - 40px) / 3);
+}
+
+.stories .section-4 .inner-button-bottom {
+    display: none;
+}
+
+/* End section-4 */
+
+/* blog-item */
+.blog-item {
+    box-shadow: 0px 4px 28px -2px #00000014;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.blog-item .inner-image {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    margin-bottom: 8px;
+}
+
+.blog-item .inner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.blog-item .inner-content {
+    padding: 8px;
+    display: block;
+}
+
+.blog-item .inner-content .inner-tag {
+    background-color: #00A7E7;
+    padding: 2px 10px;
+    border-radius: 28px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 10px;
+    color: #FDFDFD;
+}
+
+.blog-item .inner-content .inner-title {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-text-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.blog-item .inner-content .inner-desc {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #242B33;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+/* End blog-item */
+
+/* End Stories */
+#dataBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Thêm hiệu ứng khi hover vào sản phẩm */
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    /* Đẩy phần tử lên phía trên */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Thêm bóng đổ khi hover */
+}
+
+.product-item .inner-image {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.product-item .inner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.text-xl {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.stretched-link {
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.stretched-link:hover {
+    color: #007bff;
+}
+
+.badge-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .col-6 {
+    padding: 10px;
+}
+
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    /* Điều chỉnh tỷ lệ này để quyết định chiều cao của phần gradient */
+    background: linear-gradient(to bottom, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 1) 100%);
+    pointer-events: none;
+    /* Đảm bảo lớp phủ không làm ảnh hưởng đến các sự kiện chuột */
+}
+
+
+.fade-transition {
+    height: 100px;
+    /* Điều chỉnh chiều cao của lớp fade */
+    background: linear-gradient(to top, rgba(18, 18, 20, 0.7) 10%, rgba(18, 18, 20, 0) 100%);
+    margin-top: -50px;
+    /* Điều chỉnh vị trí lớp fade sao cho phù hợp */
+    pointer-events: none;
+    /* Không ảnh hưởng đến các phần tử khác */
+}
+
+.text-xl {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.stretched-link {
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.stretched-link:hover {
+    color: #007bff;
+}
+
+.badge-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .col-6 {
+    padding: 10px;
+}
+
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    /* Điều chỉnh tỷ lệ này để quyết định chiều cao của phần gradient */
+    background: linear-gradient(to bottom, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 1) 100%);
+    pointer-events: none;
+    /* Đảm bảo lớp phủ không làm ảnh hưởng đến các sự kiện chuột */
+}
+
+
+.fade-transition {
+    height: 100px;
+    background: linear-gradient(to top, rgba(18, 18, 20, 0.7) 10%, rgba(18, 18, 20, 0) 100%);
+    margin-top: -50px;
+    pointer-events: none;
+}
+
+
+/* Contact */
+
+.avt {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  
+  .avartar {
+    justify-content: space-evenly;
+    display: flex;
+  }
+  
+  .avartar2 {
+    display: flex;
+    justify-content: center;
+    gap: 230px;   
+  }
+  
+  .contact {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .header-contact {
+    display: inline-block;
+    padding: 7px 50px;
+    background-color: rgb(236, 122, 46);
+    border-radius: 1010px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header-contact p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .tenad {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .footer-contact {
+    display: inline-block;
+    padding: 20px 80px;
+    background-color: #cd4008;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  .footer-contact h2 {
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+  }

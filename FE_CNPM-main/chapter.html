@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style2.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png" class="doimau" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png" class="doimau" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png" class="doimau" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <title>Love 4 a Walk</title>
+</head>
+
+<body>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f8fc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .main-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav ul li {
+      margin-right: 20px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav ul li a:hover {
+      color: #ffcb2c;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 20px;
+      padding: 5px 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .search i {
+      margin-right: 10px;
+      color: #333;
+    }
+
+    .tkhoan ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tkhoan ul li {
+      margin-right: 20px;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: transform 0.3s;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+
+    .content {
+      margin-top: 100px;
+      max-width: 1200px;
+      margin: 100px auto 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chapter ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .chapter ul li {
+      margin-bottom: 15px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .chapter ul li:hover {
+      transform: translateY(-5px);
+    }
+
+    .chapter ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .footer ul li a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .footer ul li a:hover {
+      color: #ffcb2c;
+    }
+  </style>
+  <header class="header fixed">
+    <div class="main-content">
+      <div class="body">
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#!"><i class="fa-solid fa-palette"></i></a>
+            </li>
+            <li class="text"><a href="./stories.html">THỂ LOẠI</a></li>
+          </ul>
+        </nav>
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="span1">Search</span>
+        </div>
+        <div class="tkhoan">
+          <ul>
+            <li class="text text1"><a href="./index.html">Home</a></li>
+            <li class="text"><a href="#!">Liên hệ</a></li>
+            <li>
+              <a href="#!"><img src="https://plus.unsplash.com/premium_vector-1719015253440-ccedd0c117c3"
+                  alt="Trang cá nhân" width="32" class="avatar" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="backgr">
+      <div class="box">
+        <img id="anhnen" class="anhnen" src="./assets/images/char.png" alt="" />
+        <div class="info">
+          <!-- <h1 id="title" class="love">Love 4 a Walk</h1>
+            <h2 id="author" class="nur">Nuria Sanguino</h2> -->
+        </div>
+      </div>
+      <div class="nd">
+        <div class="chap">
+          <ul id="chapter" class="chapter">
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 10</div>
+                  <div class="right">
+                    <div class="date">22.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>40,359
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 9</div>
+                  <div class="right">
+                    <div class="date">21.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>45,562
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 8</div>
+                  <div class="right">
+                    <div class="date">20.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>33,241
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 7</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 6</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 5</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 4</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 3</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch">
+                <div class="ndchap">
+                  <div class="c1515">Chap 2</div>
+                  <div class="right">
+                    <div class="date">19.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>42,653
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="chapchung chap15">
+              <a href="" class="chch11">
+                <div class="ndchap">
+                  <div class="c1515">Chap 1</div>
+                  <div class="right">
+                    <div class="date">18.11.2024</div>
+                    <div class="tym">
+                      <i class="fa-regular fa-heart"></i>38,379
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="paginate">
+            <a href="" class="tranghientai">1</a>
+            <a href="">2</a>
+          </div>
+        </div>
+        <div class="gthi">
+          <ul class="grade">
+            <li><i class="fa-solid fa-eye"></i><em>3M</em></li>
+            <li class="t2"><i class="fa-solid fa-heart"></i><em>821K</em></li>
+            <li class="t2">
+              <i class="fa-solid fa-star"></i><em>1.5M</em>
+            </li>
+            <li class="t3"><em class="rate">Rate</em></li>
+          </ul>
+          <p class="tomtat"><i class="fa-solid fa-fire"></i><em>Tóm tắt nội dung</em></p>
+          <p id="ttnd" class="ttnd">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde et delectus sint sunt
+            ratione. A quaerat quae ipsa fugiat, facilis, aliquid necessitatibus quod laudantium obcaecati dolore sequi.
+            Debitis, provident! Libero.
+            Amet, quis in nisi libero necessitatibus culpa perferendis! Quidem eum vero eveniet debitis? Similique
+            perferendis non architecto dignissimos soluta saepe repellendus consectetur. Minima explicabo et esse,
+            accusamus ipsam culpa id.</p>
+          <!-- tuday -->
+          <!-- tuday -->
+          <div class="thucode-comment-section">
+            <form action="#" class="thucode-inner-form">
+              <div class="thucode-input-container">
+                <textarea id="thucode-inputField" name="keyword" placeholder="Nhập bình luận của..."
+                  rows="1"></textarea>
+              </div>
+              <div class="thucode-star-rating">
+                <span class="thucode-star" data-value="1"><i class="fas fa-star"></i></span>
+                <span class="thucode-star" data-value="2"><i class="fas fa-star"></i></span>
+                <span class="thucode-star" data-value="3"><i class="fas fa-star"></i></span>
+                <span class="thucode-star" data-value="4"><i class="fas fa-star"></i></span>
+                <span class="thucode-star" data-value="5"><i class="fas fa-star"></i></span>
+              </div>
+              <button type="submit" id="thu-button" class="thu-button">Gửi bình luận</button>
+            </form>
+          </div>
+
+          <!-- Danh sách bình luận -->
+          <div id="comment-list">
+            <div class="comment-item">
+              <div class="comment-header">
+                <div class="avatar"> 
+                  <img src="assets/images/download.png" alt="Avatar">
+                </div>
+                <div class="username">Người dùng ẩn danh</div>
+              </div>
+              <div class="comment-body">
+                Đây là bình luận mẫu của người dùng 1. Bình luận này sẽ bị giới hạn chỉ hiển thị 5 dòng đầu tiên, nếu
+                bạn muốn đọc thêm thì có thể bấm vào "..." để mở rộng bình luận.
+                <span class="show-more">...</span>
+              </div>
+              <div class="comment-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+
+  <script src="/assets/js/script.js"></script>
+</body>
+
+<script>
+  const stars = document.querySelectorAll('.thucode-star');
+  const story_id = getQueryParam('story_id');
+  const commentField = document.querySelector('#thucode-inputField');
+  const submitButton = document.querySelector('.thu-button');
+  let selectedRating = 1;
+
+// Xử lý sự kiện khi click vào một ngôi sao
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        // Lấy giá trị sao từ thuộc tính data-value
+        selectedRating = parseInt(star.getAttribute('data-value'));
+        console.log(selectedRating)
+        // Cập nhật màu sắc của tất cả các ngôi sao
+        updateStarColors(selectedRating);
+    });
+});
+  // URL của API
+
+  const apiUrl= `http://localhost:8090/api/chapter?story_id=${story_id}` 
+
+  // Lấy phần tử hiển thị dữ liệu
+  const apiComment = `http://localhost:8090/api/comment?story_id=${story_id}`
+
+  // Gọi API bằng Fetch
+  
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json(); // Parse JSON từ response
+    })
+    .then(data => {
+      // Hiển thị dữ liệu trong block
+      const StoryType = {
+        STORY_NOVELS: "story_novels",
+        STORY_MANGA: "story_manga"
+      };
+
+      // Hàm chuyển đổi từ text sang Enum
+      function textToEnum(text) {
+        const mapping = {
+          "TRUYỆN CHỮ": StoryType.STORY_NOVELS,
+          "TRUYỆN TRANH": StoryType.STORY_MANGA
+        };
+        return mapping[text] || null; // Trả về null nếu không tìm thấy
+      }
+
+      const anhnen = document.getElementById('anhnen');
+      const ttnd = document.getElementById('ttnd');
+      const chapter = document.getElementById('chapter');
+      const type_story = textToEnum(data.type)
+
+
+      // title.innerText = `${data.title}`
+      ttnd.innerText = `${data.description}`
+      anhnen.src = `${data.url}`
+      // author.innerText = `${data.authorName}`
+
+      let listHTML = '';
+      for (let i = 0; i < data.chapter_id.length; i++) {
+        // Thêm mỗi item vào trong <li>
+        listHTML += `
+            <li class="chapchung chap15">
+                <a href="./main_read.html?type_story=${type_story}&story_id=${story_id}&chapter_id=${data.chapter_id[i]}" class="chch">
+                  <div class="ndchap">
+                    <div class="c1515">Chap ${data.chapter_id[i]}</div>
+                    <div class="right">
+                      <div class="date">22.11.2024</div>
+                      <div class="tym">
+                        <i class="fa-regular fa-heart"></i>40,359
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+        `;
+      }
+      chapter.innerHTML = listHTML
+    })
+    .catch(error => {
+    });
+fetchComments(apiComment) 
+let isLogged = localStorage.getItem('isLogged') === 'true'; 
+submitButton.addEventListener("click", e => {
+  e.preventDefault()
+  if(isLogged){
+  if(commentField.value!=null){
+    fetch('http://localhost:8090/api/saveComment', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    // Các headers khác nếu cần
+  },
+  body: JSON.stringify({ comment: `${commentField.value}`, rate: selectedRating, storyID : parseInt(story_id) }),
+  // mode: 'CORS', // Chế độ xử lý chính sách đồng nguyên (Same-Origin Policy)
+  // credentials: 'include', // Bao gồm cookie trong yêu cầu (hoặc 'same-origin', 'omit')
+  // cache: 'no-cache', // Kiểm tra cache, có thể là 'default', 'no-store', 'reload', 'no-cache', v.v.
+  // redirect: 'follow', // Chế độ chuyển hướng, có thể là 'follow', 'error', 'manual'
+  // referrerPolicy: 'no-referrer', // Chế độ xử lý referer, có thể là 'no-referrer', 'no-referrer-when-downgrade', 'same-origin', 'origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url'
+})
+  .then((response) => response.json())
+  .then((data) => fetchComments(apiComment))
+  .catch((error) => console.log('hehehehe:'));  
+  }
+}
+});
+
+
+ 
+</script>
+
+<script src="./assets/js/login_register.js" type="module"></script>
+
+</html>   

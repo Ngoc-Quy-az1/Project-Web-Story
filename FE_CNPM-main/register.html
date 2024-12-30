@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="assets/images/palet.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đăng ký</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login_register.css">
+</head>
+
+<body>
+
+    <div class="wappad" wappad>
+        <header class="header">
+            <div class="inner-logo">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/palet.png" alt="Logo">
+                </a>
+            </div>
+            <div class="inner-action">
+                <a href="login.html" class="button" button-login>
+                    Đăng nhập
+                </a>
+                <a href="register.html" class="button" button-register>
+                    Đăng ký
+                </a>    
+            </div>
+        </header>
+
+        <h3>Đăng ký tài khoản</h3>
+
+        <form action="" class="form" id="form-register">
+            <div class="form__group">
+                <label for="fullName">Họ tên</label>
+                <input type="text" name="fullName" id="fullName" required>
+            </div>
+            <div class="form__group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+
+            <div class="form__group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <button type="submit" class="form__button">
+                Đăng ký
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form-register').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            const data = {
+                username: fullName,
+                email: email,
+                password: password
+            };
+    
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = "Đang xử lý...";
+    
+            fetch('http://localhost:8090/api/saveAccount', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(data => {
+                    alert('Đăng ký thành công!');
+                    window.location.href = "login.html";
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Đăng ký";
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

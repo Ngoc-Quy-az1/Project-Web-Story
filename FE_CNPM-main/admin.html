@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManagerStory
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+      body {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    color: #333;
+}
+
+.sidebar {
+    width: 300px;
+    background: #2c3e50;
+    color: white;
+    height: 150 vh;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.sidebar h4 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar button {
+    text-align: left;
+    background-color: #34495e;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #1abc9c;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content h1 {
+    color: #2c3e50;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+    color: #1abc9c;
+    margin: 0 0 10px;
+}
+
+.user-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form .form-control:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
+    outline: none;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #16a085;
+}
+
+#addStoryResult, #deleteResult {
+    margin-top: 15px;
+}
+
+#storyButtons {
+    display: none;
+    margin-top: 15px;
+}
+
+#storyButtons.d-none {
+    display: block;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4>Quản lí trang web truyện</h4>
+        <ul class="list-unstyled">
+            <!-- Nút Quản lý truyện -->
+            <li>
+                <button id="manageStories" class="btn w-100 mb-2">Quản lý truyện</button>
+                <!-- Các nút Thêm và Xóa truyện sẽ ẩn mặc định -->
+                <div id="storyButtons" class="d-none">
+                    <button id="addStory" class="btn w-100 mb-1">Thêm truyện</button>
+                    <button id="deleteStory" class="btn w-100">Xóa truyện</button>
+                </div>
+            </li>
+            <li>
+                <button id="manageUsers" class="btn w-100">Quản lý người dùng</button>
+            </li>
+            <li>
+                <button id="logout" class="btn w-100 mt-4 btn-danger">Đăng xuất</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>CHÀO MỪNG BẠN ĐẾN VỚI TRANG QUẢN LÝ TRUYỆN </h1>
+        <p>Quản lí truyện một cách dễ dàng</p>
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Hiển thị nhanh chóng</h3>
+                <p>Danh sách truyện</p>
+            </div>
+            <div class="stat-card">
+                <h3>Quản lý người dùng một dễ dàng</h3>
+                <p></p>
+            </div>
+            <div class="stat-card">
+                <h3>Xử lý dữ liệu hiệu quả</h3>
+                <p>Chính xác</p>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Section -->
+        <div id="dynamicContent">
+            <h3>Chúc bạn có những trải nghiệm tốt !</h3>
+            <!-- <p>Select an option from the sidebar to manage content.</p> -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('manageStories').addEventListener('click', () => {
+            const storyButtons = document.getElementById('storyButtons');
+            storyButtons.classList.toggle('d-none');
+        });
+        document.getElementById('addStory').addEventListener('click', () => {
+         document.getElementById('dynamicContent').innerHTML = `
+        <h3>Thêm truyện</h3>
+        <form id="addStoryForm">
+            <div class="form-group">
+                <label for="author" class="form-label">Tác giả</label>
+                <input type="text" class="form-control" id="author" placeholder="Tên tác giả">
+            </div>
+            <div class="form-group">
+                <label for="authorBio" class="form-label">Tiểu sử tác giả</label>
+                <textarea class="form-control" id="authorBio" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="genre" class="form-label">Tên thể loại</label>
+                <input type="text" class="form-control" id="genre" placeholder="Thể loại truyện">
+            </div>
+            <div class="form-group">
+                <label for="title" class="form-label">Tên truyện</label>
+                <input type="text" class="form-control" id="title" placeholder="Tên truyện">
+            </div>
+            <div class="form-group">
+                <label for="summary" class="form-label">Tóm tắt truyện</label>
+                <textarea class="form-control" id="summary" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="publishDate" class="form-label">Ngày đăng</label>
+                <input type="date" class="form-control" id="publishDate">
+            </div>
+            <div class="form-group">
+                <label for="coverUrl" class="form-label">URL ảnh bìa</label>
+                <input type="url" class="form-control" id="coverUrl" placeholder="URL ảnh bìa">
+            </div>
+            <div class="form-group">
+                <label for="chapterCount" class="form-label">Số lượng chapter</label>
+                <input type="number" class="form-control" id="chapterCount" placeholder="Số lượng chapter">
+            </div>
+            <div id="chaptersContainer"></div>
+            <button type="button" class="btn btn-secondary mt-2" id="generateChapters">Tạo danh sách chapter</button>
+            <button type="button" class="btn btn-primary mt-2" id="submitStory">Thêm truyện</button>
+        </form>
+        <div id="addStoryResult" class="mt-3"></div>
+    `;
+
+    document.getElementById('generateChapters').addEventListener('click', () => {
+        const chapterCount = parseInt(document.getElementById('chapterCount').value);
+        const chaptersContainer = document.getElementById('chaptersContainer');
+        chaptersContainer.innerHTML = '';
+
+        if (!isNaN(chapterCount) && chapterCount > 0) {
+            for (let i = 1; i <= chapterCount; i++) {
+                chaptersContainer.innerHTML += `
+                    <div class="form-group mt-3">
+                        <label for="chapterName${i}" class="form-label">Tên chapter ${i}</label>
+                        <input type="text" class="form-control" id="chapterName${i}" placeholder="Tên chapter ${i}">
+                    </div>
+                    <div class="form-group">
+                        <label for="chapterImages${i}" class="form-label">Danh sách link ảnh cho chapter ${i}</label>
+                        <textarea class="form-control" id="chapterImages${i}" rows="3" placeholder="Danh sách link ảnh, cách nhau bởi dấu phẩy"></textarea>
+                    </div>
+                `;
+            }
+        } else {
+            chaptersContainer.innerHTML = '<p class="text-danger">Vui lòng nhập số lượng chapter hợp lệ.</p>';
+        }
+    });
+
+    document.getElementById('submitStory').addEventListener('click', async () => {
+        const storyData = {
+            name: document.getElementById('author').value,
+            bio: document.getElementById('authorBio').value,
+            category: document.getElementById('genre').value,
+            title: document.getElementById('title').value,
+            description: document.getElementById('summary').value,
+            publishDate: document.getElementById('publishDate').value,
+            avtStory: document.getElementById('coverUrl').value,
+            chapters: []
+        };
+
+        const chapterCount = parseInt(document.getElementById('chapterCount').value);
+        for (let i = 1; i <= chapterCount; i++) {
+            const chapID= document.getElementById(`chapterName${i}`).value;
+            const chapterImages = document.getElementById(`chapterImages${i}`).value.split(',').map(img => img.trim());
+
+            storyData.chapters.push({
+                chapterID: chapID,
+                images: chapterImages
+            });
+        }
+
+        const resultDiv = document.getElementById('addStoryResult');
+        try {
+            const response = await fetch('http://localhost:8090/api/addStory', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(storyData)
+            });
+
+            if (response.ok) {
+                resultDiv.innerHTML = `<p class="text-success">Truyện "${storyData.title}" đã được thêm thành công.</p>`;
+            } else {
+                resultDiv.innerHTML = `<p class="text-danger">Thêm truyện thành công </p>`;
+            }
+        } catch (error) {
+            resultDiv.innerHTML = `<p class="text-danger">Thêm truyện thành công </p>`;
+        }
+    });
+});
+
+
+        document.getElementById('deleteStory').addEventListener('click', async () => {
+    document.getElementById('dynamicContent').innerHTML = `
+        <h3>Xóa truyện</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Nhập tên truyện cần xóa:</p>
+                <div class="mb-3">
+                    <input id="storyTitle" type="text" class="form-control" placeholder="Tên truyện">
+                </div>
+                <button id="confirmDelete" class="btn btn-danger">Xóa</button>
+                <div id="deleteResult" class="mt-3"></div>
+            </div>
+            <div class="col-md-6">
+                <h4>Danh sách truyện</h4>
+                <div id="storyList" class="user-list">Loading...</div>
+            </div>
+        </div>
+    `;
+
+    // Fetch danh sách truyện từ API
+    try {
+        const response = await fetch('http://localhost:8090/api/FullStorytitle');
+        const storyTitles = await response.json();
+        const storyListDiv = document.getElementById('storyList');
+        storyListDiv.innerHTML = storyTitles.map(title => 
+            `<p style="cursor:pointer;" onclick="document.getElementById('storyTitle').value='${title}'">${title}</p>`
+        ).join('');
+    } catch (error) {
+        document.getElementById('storyList').innerHTML = `<p class="text-danger">Không thể tải danh sách truyện.</p>`;
+        console.error('Error fetching story titles:', error);
+    }
+
+    document.getElementById('confirmDelete').addEventListener('click', async () => {
+        const title = document.getElementById('storyTitle').value;
+        const resultDiv = document.getElementById('deleteResult');
+        if (!title) {
+            resultDiv.innerHTML = `<p class="text-danger">Vui lòng nhập tên truyện.</p>`;
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:8090/api/deleteStory?title=${encodeURIComponent(title)}`);
+            if (response.ok) {
+                resultDiv.innerHTML = `<p class="text-success">Truyện "${title}" đã được xóa thành công.</p>`;
+                // Xóa tên truyện khỏi danh sách hiển thị
+                const storyListDiv = document.getElementById('storyList');
+                storyListDiv.innerHTML = storyListDiv.innerHTML.replace(new RegExp(`<p.*?>${title}<\/p>`), '');
+            } else {
+                resultDiv.innerHTML = `<p class="text-danger">Không thể xóa truyện "${title}". Vui lòng thử lại.</p>`;
+            }
+        } catch (error) {
+            resultDiv.innerHTML = `<p class="text-danger">Đã xảy ra lỗi khi xóa truyện: ${error.message}</p>`;
+        }
+    });
+});
+
+        document.getElementById('manageUsers').addEventListener('click', async () => {
+            const dynamicContent = document.getElementById('dynamicContent');
+            dynamicContent.innerHTML = `<h3>Danh sách người dùng</h3><div class="user-list">Loading...</div>`;
+
+            try {
+                const response = await fetch('http://localhost:8090/api/informationUser');
+                const users = await response.json();
+                const userList = users.map(user => `
+                    <div>
+                        <strong>ID:</strong> ${user.user_id} <br>
+                        <strong>Username:</strong> ${user.username} <br>
+                        <strong>Email:</strong> ${user.email} <br>
+                        <strong>Password:</strong> ${user.password}
+                    </div>
+                    <hr>
+                `).join('');
+                dynamicContent.innerHTML = `<h3>Danh sách người dùng</h3><div class="user-list">${userList}</div>`;
+            } catch (error) {
+                dynamicContent.innerHTML = `<h3>Danh sách người dùng</h3><p>Không thể tải danh sách người dùng.</p>`;
+                console.error('Error fetching user data:', error);
+            }
+        });
+        document.getElementById('logout').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    
+        document.getElementById('manageStories').addEventListener('click', () => {
+        const storyButtons = document.getElementById('storyButtons');
+        storyButtons.classList.toggle('d-none');
+    });
+
+});
+
+    </script>
+</body>
+</html>
